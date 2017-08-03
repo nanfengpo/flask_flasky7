@@ -1,5 +1,7 @@
+# coding:utf8
+
 from flask import render_template, session, redirect, url_for, current_app
-from .. import db
+from .. import db # 这个db是在app/__init__.py中定义的
 from ..models import User
 from ..email import send_email
 from . import main

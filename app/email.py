@@ -1,3 +1,6 @@
+
+# coding=utf8
+
 from threading import Thread
 from flask import current_app, render_template
 from flask_mail import Message
@@ -5,7 +8,7 @@ from . import mail
 
 
 def send_async_email(app, msg):
-    with app.app_context():
+    with app.app_context(): # 只有在程序上下文里，mail才能读取app.config里有关邮件的配置
         mail.send(msg)
 
 
